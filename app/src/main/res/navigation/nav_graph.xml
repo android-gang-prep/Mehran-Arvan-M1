@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.mehranarvanm1.fragments.SplashFragment"
+        android:label="SplashFragment">
+        <action
+            android:id="@+id/action_splashFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+        <action
+            android:id="@+id/action_splashFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.example.mehranarvanm1.fragments.SignUpFragment"
+        android:label="SignUpFragment">
+        <action
+            android:id="@+id/action_signUpFragment_to_enterPhoneNumberFragment"
+            app:destination="@id/enterPhoneNumberFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/enterPhoneNumberFragment"
+        android:name="com.example.mehranarvanm1.fragments.EnterPhoneNumberFragment"
+        android:label="EnterPhoneNumberFragment">
+        <action
+            android:id="@+id/action_enterPhoneNumberFragment_to_selectCountryFragment2"
+            app:destination="@id/selectCountryFragment2" />
+        <action
+            android:id="@+id/action_enterPhoneNumberFragment_to_activeCodeFragment"
+            app:destination="@id/activeCodeFragment" />
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument
+            android:name="email"
+            app:argType="string" />
+        <argument
+            android:name="password"
+            app:argType="string" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/selectCountryFragment2"
+        android:name="com.example.mehranarvanm1.fragments.SelectCountryFragment"
+        android:label="SelectCountryFragment">
+        <action
+            android:id="@+id/action_selectCountryFragment2_to_enterPhoneNumberFragment"
+            app:destination="@id/enterPhoneNumberFragment"
+            app:popUpTo="@id/enterPhoneNumberFragment"
+            app:popUpToInclusive="true" />
+
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument
+            android:name="email"
+            app:argType="string" />
+        <argument
+            android:name="password"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/activeCodeFragment"
+        android:name="com.example.mehranarvanm1.fragments.ActiveCodeFragment"
+        android:label="ActiveCodeFragment" >
+        <action
+            android:id="@+id/action_activeCodeFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_activeCodeFragment_to_startFragment"
+            app:destination="@id/startFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.mehranarvanm1.fragments.LoginFragment"
+        android:label="LoginFragment" >
+        <argument
+            android:name="password"
+            app:argType="string" />
+        <argument
+            android:name="email"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_loginFragment_to_startFragment"
+            app:destination="@id/startFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/startFragment"
+        android:name="com.example.mehranarvanm1.fragments.StartFragment"
+        android:label="StartFragment" />
+</navigation>
